@@ -1,0 +1,109 @@
+/**
+ * ~The Feed
+ * --------------------------------------------------- */
+@media (min-width: $screen-xs-min) {
+    .grid-item,
+    .feed-item {
+        width: percentage(6 / $grid-columns);
+        .th {
+        }
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .grid-item,
+    .feed-item {
+        width: percentage(4 / $grid-columns);
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .grid-item,
+    .feed-item {
+        width: percentage(3 / $grid-columns);
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .grid-item,
+    .feed-item {
+        width: percentage(2.4 / $grid-columns);
+    }
+}
+
+@media (min-width: $screen-xl-min) {
+    .grid-item,
+    .feed-item {
+        width: percentage(2 / $grid-columns);
+    }
+}
+
+#feed {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+}
+
+.grid-item, // TODO remove
+.feed-item {
+    display: flex;
+    padding: 1rem;
+
+    img {
+        object-fit: cover;
+        height: 15rem;
+        width: 100%;
+        border: thin solid rgba(0,0,0,0.2);
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .postText {
+        flex: 1 0 auto;
+    }
+}
+
+/**
+ * ~Feed Item
+ * --------------------------------------------------- */
+.info,
+.client,
+.url,
+.tag {
+    color: rgba(0,0,0,0.35);
+}
+
+.title,
+.desc {
+    word-break: break-all;
+}
+
+.content:not(.disabled) .toggle-enable,
+.disabled .toggle-disable {
+    display: none;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.highlight-on-hover {
+    transition: color .2s;
+}
+
+.content:not(.disabled):hover .highlight-on-hover {
+    color: #008CBA;
+}
